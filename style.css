@@ -100,24 +100,24 @@ hr,
   width: 95%;
 }
 
-.delete {
+.delete-button {
   margin-left: auto;
 }
-.read,
-.delete {
+.read-button,
+.delete-button {
   font-size: 15px;
   border: none;
   background-color: #ffffff;
 }
-.read:focus {
+.read-button:focus {
   outline: 0;
 }
-.delete:focus {
+.delete-button:focus {
   outline: 0;
 }
-.read:hover {
+.read-button:hover {
   text-decoration: underline;
 }
-.delete:hover {
+.delete-button:hover {
     text-decoration: underline;
 }
