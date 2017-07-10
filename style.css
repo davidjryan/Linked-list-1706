@@ -96,3 +96,21 @@ hr,
 .delete {
   margin-left: auto;
 }
+.read,
+.delete {
+  font-size: 15px;
+  border: none;
+  background-color: #ffffff;
+}
+.read:focus {
+  outline: 0;
+}
+.delete:focus {
+  outline: 0;
+}
+.read:hover {
+  text-decoration: underline;
+}
+.delete:hover {
+    text-decoration: underline;
+}
