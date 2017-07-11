@@ -5,7 +5,7 @@ $('.delete-button').on('click', deleteButton);
 
 $( document ).ready(function() {
     console.log( "ready!" );
-    $('.enter').prop('disabled', true);
+    // $('.enter').prop('disabled', true);
 });
 
 function enterPressed() {
@@ -21,8 +21,8 @@ function prependCard(title, url) {
           <a class="urllink" target="_blank" href="${url}">${url}</a>
           <hr />
           <section class="read-delete-container">
-            <button class="read">Read</button>
-            <button class="delete">Delete</button>
+            <button class="read-button">Read</button>
+            <button class="delete-button">Delete</button>
           </section>
         </article>`);
 }
