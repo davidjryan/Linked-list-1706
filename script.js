@@ -5,12 +5,12 @@ $('.enter').on('click', enterPressed);
 $('main').on('click', '.read-button', readButton);
 $('main').on('click', '.delete-button', deleteButton);
 
+
 $( document ).ready(function() {
     console.log( "ready!" );
+    // $('article').remove();
     $('.enter').prop('disabled', true);
 });
-
-
 
 function enterPressed() {
   var titleInput = $('.title').val();
@@ -22,13 +22,13 @@ function enterPressed() {
   } else if (!isUrl(urlInput)) {
     alert("Your url is invalid!");
   } else {
-    recordCount++;
     prependCard(titleInput, urlInput);
     clearInput();
   }
 }
 
 function prependCard(title, url) {
+  $('.card-counter').html(function(i, val) { return val*1+1 });
   $('main').prepend(`<article class="card">
           <h2 class="title">${title}</h2>
           <hr />
@@ -43,6 +43,7 @@ function prependCard(title, url) {
 
 function readButton() {
   $(this).closest('article').toggleClass('read');
+  $('.read-counter').html(function(i, val) { return val*1+1 });
 }
 
 function deleteButton() {
@@ -71,7 +72,7 @@ function enterDisabled() {
 
 function cardTotal() {
   var articleList = document.querySelectorAll('article');
-  console.log(articleList);
+    console.log(articleList);
 }
 
 function readUnread() {
