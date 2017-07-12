@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -33,7 +34,7 @@ header {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 6vw;
 }
 
 img {
@@ -43,17 +44,14 @@ img {
   margin-top: -13px;
 }
 
-form {
-  
-}
-
 input {
   width: 89.23%;
   border-style: 1px solid;
   font-size: 25px;
 }
 
-.enter {
+.enter,
+.clear {
   width: 90%;
   font-size: 22px;
   background-color: #FFC107;
@@ -62,14 +60,25 @@ input {
   border-style: none;
 }
 
+.counter-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div {
+  width: 33%;
+  font-size: 12px;
+}
+
 main {
   width: 50%;
-  height: auto;
   background-color: #CFD8DC;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2.0%;
+  padding-top: 2%;
 }
 
  article {
@@ -79,7 +88,8 @@ main {
   align-items: center;
   background-color: #FFFFFF;
   width: 95%;
-  height: 20%;
+  height: 22%;
+  margin-bottom: 5%;
   border: 1px solid #455A64;
 }
 
@@ -104,14 +114,22 @@ hr,
   width: 95%;
 }
 
+.urllink {
+  color: #607D8B;
+  text-decoration-color: #F2F4F4;
+}
+
 .delete-button {
   margin-left: auto;
 }
 .read-button,
 .delete-button {
   font-size: 15px;
-  border: none;
   background-color: #ffffff;
+  color: #455A64;
+  border: none;
+  text-decoration: underline;
+  text-decoration-color: #F2F4F4;
 }
 .read-button:focus {
   outline: 0;
@@ -120,8 +138,12 @@ hr,
   outline: 0;
 }
 .read-button:hover {
-  text-decoration: underline;
+  color: red;
 }
 .delete-button:hover {
-    text-decoration: underline;
+  color: grey;
+}
+
+.read .read-button {
+  color: red;
 }

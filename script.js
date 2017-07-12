@@ -1,14 +1,13 @@
-var recordCount = 0;
 
 $('input').on('keyup', enterDisabled);
 $('.enter').on('click', enterPressed);
+$('.clear').on('click', clearRead);
 $('main').on('click', '.read-button', readButton);
 $('main').on('click', '.delete-button', deleteButton);
 
 
 $( document ).ready(function() {
     console.log( "ready!" );
-    // $('article').remove();
     $('.enter').prop('disabled', true);
 });
 
@@ -23,12 +22,12 @@ function enterPressed() {
     alert("Your url is invalid!");
   } else {
     prependCard(titleInput, urlInput);
+    cardTotal();
     clearInput();
   }
 }
 
 function prependCard(title, url) {
-  $('.card-counter').html(function(i, val) { return val*1+1 });
   $('main').prepend(`<article class="card">
           <h2 class="title">${title}</h2>
           <hr />
@@ -43,21 +42,18 @@ function prependCard(title, url) {
 
 function readButton() {
   $(this).closest('article').toggleClass('read');
-  $('.read-counter').html(function(i, val) { return val*1+1 });
+  cardTotal();
 }
 
 function deleteButton() {
   $(this).closest('article').remove();
+  cardTotal();
 }
 
 function clearInput() {
   $('.title').val('');
   $('.url').val('');
   $('.enter').prop('disabled', true);
-}
-
-function markAsRead() {
-
 }
 
 function enterDisabled() {
@@ -71,20 +67,23 @@ function enterDisabled() {
 }
 
 function cardTotal() {
-  var articleList = document.querySelectorAll('article');
-    console.log(articleList);
+  var articleCount = $('article').length;
+  var readCount = $('.read').length;
+  var unreadCount = articleCount - readCount;
+
+  $('.card-counter').text("Total Cards: " + articleCount)
+  $('.read-counter').text("Total Read: " + readCount)
+  $('.unread-counter').text("Total Unread: " + unreadCount)
 }
 
-function readUnread() {
-
-}
 
 function clearRead() {
-
+  $('.read').remove();
+  cardTotal();
 }
 
 function isUrl(url) {
   var regexQuery = "^(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$";
- var pattern = new RegExp(regexQuery,"i");
- return pattern.test(url);
+  var pattern = new RegExp(regexQuery,"i");
+  return pattern.test(url);
 }
