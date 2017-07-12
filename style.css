@@ -52,7 +52,7 @@ input {
 .enter,
 .clear {
   width: 90%;
-  font-size: 22px;
+  font-size: 20px;
   background-color: #FFC107;
   color: #FFFFFF;
   font-weight: bold;
@@ -123,7 +123,7 @@ hr,
 }
 .read-button,
 .delete-button {
-  font-size: 15px;
+  font-size: 12px;
   background-color: #ffffff;
   color: #455A64;
   border: none;
@@ -145,4 +145,37 @@ hr,
 
 .read .read-button {
   color: red;
+}
+
+@media (max-width: 770px) {
+  .input-container {
+    height: 35%;
+  }
+  article {
+    height: 17%;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header,
+  main {
+    width: 100%;
+  }
+
+  header {
+    height: 25%;
+  }
+
+  .input-container {
+    height: 95%;
+  }
+
+  main {
+    height: 75%;
+  }
 }
