@@ -12,7 +12,6 @@ body {
 
 header {
   width: 50%;
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,35 +73,36 @@ div {
 main {
   width: 50%;
   background-color: #CFD8DC;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 2%;
+  padding: 1%;
+  overflow-y: scroll;
 }
 
  article {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
   background-color: #FFFFFF;
-  width: 95%;
-  height: 22%;
+  width: 99%;
+  height: 23%;
   margin-bottom: 5%;
   border: 1px solid #455A64;
 }
 
 h2 {
+  margin: 2% 0 0% 0 ;
   color: #455A64;
 
 }
 
 hr {
+  margin: 3% 0% 3% 0;
   color: #CFD8DC;
 }
 
 .read-delete-container {
   display: flex;
+  margin: 1% 0 0 0;
 
 }
 
@@ -152,8 +152,19 @@ hr,
     height: 35%;
   }
   article {
-    height: 17%;
+    height: 25%;
+    width: 100%
   }
+  main {
+    padding: 2%;
+  }
+
+  img {
+    height: 70px;
+    width: 70px;
+    margin-bottom: -17px;
+  }
+
 }
 
 @media (max-width: 420px) {
@@ -161,14 +172,21 @@ hr,
     display: flex;
     flex-direction: column;
   }
-
-  header,
-  main {
-    width: 100%;
+  input,
+  button {
+    font-size: 16px
   }
 
   header {
-    height: 25%;
+    width: 96%;
+    height: 27%;
+    padding: 2%;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+    margin-bottom: -12px;
   }
 
   .input-container {
@@ -176,6 +194,15 @@ hr,
   }
 
   main {
+    width: 96%;
     height: 75%;
   }
+  article {
+    height: 30%;
+  }
+
+  .read-delete-container {
+
+  }
+
 }
